@@ -11,13 +11,8 @@ import java.sql.SQLException;
 @Controller
 public class IndexController {
 
-    Repository repo = new Repository();
-
     @GetMapping("/name")
-    public String index(Model dataToView) throws SQLException {
-        repo.connectDB();
-        String nameFetch = repo.fetchName();
-        dataToView.addAttribute("name", nameFetch);
+    public String index() {
         return "index";
 
     }
